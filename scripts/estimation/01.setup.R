@@ -63,13 +63,13 @@ asmr.W <- c(rep(0, 17),
                    rep(0.00133, 10),
                    rep(0.00214, 5)))^(1/(365/time.unit)), 1)
 
-# I, R, V role frequencies
+# I (insertive), R (receptive), V (versatile) role frequencies
 role.B.prob <- role.W.prob <-
   (c(0.242, 0.321, 0.437) + c(0.228, 0.228, 0.544))/2
 
 
 # Create meanstats
-st <- calc_nwstats_msm(
+st <- calc_nwstats_msm(                 # I could not found the function 
   method = 1,
   time.unit = time.unit,
   num.B = num.B,
@@ -96,5 +96,5 @@ st <- calc_nwstats_msm(
   role.B.prob = role.B.prob,
   role.W.prob = role.W.prob)
 
-save(st, file = "est/nwstats.rda")
+save(st, file = "est/nwstats.rda")      # est/nwstats.10k.rda ?
 rm(list = ls())

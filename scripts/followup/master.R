@@ -39,7 +39,6 @@ qsub_master(simno.start = 2200,
 
 
 # Table 2: risk interval
-
 vars <- list(COVR = 0.4,
              MODEL = "cdc3",
              RISKINT = c(91, 182, 364),

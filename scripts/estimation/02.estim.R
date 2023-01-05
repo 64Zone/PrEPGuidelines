@@ -4,7 +4,7 @@
 suppressMessages(library(EpiModelHIV))
 rm(list = ls())
 
-load("est/nwstats.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/PrEPGuidelines/est/nwstats.10k.rda")
 
 
 # 1. Main Model -----------------------------------------------------------
@@ -39,7 +39,7 @@ fit.m <- netest(nw.main,
 nw.pers <- nw.main
 
 # Assign degree
-nw.pers <- assign_degree(nw.pers, deg.type = "main", nwstats = st)
+nw.pers <- assign_degree(nw.pers, deg.type = "main", nwstats = st)            # why deg.type has switched "pers" and "main" (see nw.main)
 
 # Formulas
 formation.p <- ~edges +
@@ -51,7 +51,7 @@ formation.p <- ~edges +
 # Fit model
 fit.p <- netest(nw.pers,
                 formation = formation.p,
-                coef.form = c(-Inf, -Inf),
+                coef.form = c(-Inf, -Inf),                        # correspond to 'offset()' term in 
                 target.stats = st$stats.p,
                 coef.diss = st$coef.diss.p,
                 constraints = ~bd(maxout = 2),
@@ -81,7 +81,7 @@ formation.i <- ~edges +
 fit.i <- netest(nw.inst,
                 formation = formation.i,
                 target.stats = st$stats.i,
-                coef.form = c(-Inf, -Inf),
+                coef.form = c(-Inf, -Inf),                                       
                 coef.diss = dissolution_coefs(~offset(edges), 1),
                 set.control.ergm = control.ergm(MPLE.max.dyad.types = 1e9,
                                                 MCMLE.maxit = 250))

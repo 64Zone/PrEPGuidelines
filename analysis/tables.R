@@ -3,7 +3,7 @@
 
 rm(list = ls())
 library(mardham2)
-source("papers/prepguidelines/analysis/fx.R")
+source("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/analysis/fx.R")
 
 
 # Table 2 -----------------------------------------------------------------
@@ -11,7 +11,7 @@ source("papers/prepguidelines/analysis/fx.R")
 steps <- 52 *  10
 
 ## Base model: sim.n2000
-load("papers/prepguidelines/data/sim.n2000.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2000.lim.rda")
 sim.base <- truncate_sim(sim, at = 2600)
 
 mn <- as.data.frame(sim.base)
@@ -38,47 +38,47 @@ incid.base <- sum(mn$incid)
 incid.base
 
 ## Condition 1a: sim.n2100
-load("papers/prepguidelines/data/sim.n2100.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2100.lim.rda")
 epi_stats(sim, ir.base, incid.base)
 
 ## Condition 1b: sim.n2101
-load("papers/prepguidelines/data/sim.n2101.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2101.lim.rda")
 epi_stats(sim, ir.base, incid.base)
 
 ## Condition 2a: sim.n2102
-load("papers/prepguidelines/data/sim.n2102.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2102.lim.rda")
 epi_stats(sim, ir.base, incid.base)
 
 ## Condition 2b: sim.n2103
-load("papers/prepguidelines/data/sim.n2103.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2103.lim.rda")
 epi_stats(sim, ir.base, incid.base)
 
 ## Condition 3a: sim.n2104
-load("papers/prepguidelines/data/sim.n2104.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2104.lim.rda")
 epi_stats(sim, ir.base, incid.base)
 
 ## Condition 3b: sim.n2105
-load("papers/prepguidelines/data/sim.n2105.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2105.lim.rda")
 epi_stats(sim, ir.base, incid.base)
 
 ## Condition J1: sim.n2106
-load("papers/prepguidelines/data/sim.n2106.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2106.lim.rda")
 epi_stats(sim, ir.base, incid.base)
 
 ## Condition J2: sim.n2108
-load("papers/prepguidelines/data/sim.n2108.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2108.lim.rda")
 epi_stats(sim, ir.base, incid.base)
 
 ## Condition J3: sim.n2109
-load("papers/prepguidelines/data/sim.n2109.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2109.lim.rda")
 epi_stats(sim, ir.base, incid.base)
 
 # Table 3 ----------------------------------------------------------------------
 
 rm(list = ls())
-source("papers/prepguidelines/analysis/fx.R")
+source("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/analysis/fx.R")
 
-load("papers/prepguidelines/data/sim.n2000.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2000.lim.rda")
 sim.base <- truncate_sim(sim, at = 2600)
 
 mn <- as.data.frame(sim.base)
@@ -89,17 +89,17 @@ incid.base <- sum(mn$incid)
 ## Coverage ##
 
 # 10% coverage
-load("papers/prepguidelines/data/sim.n2245.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2245.lim.rda")
 sim$param$prep.coverage
 epi_stats(sim, ir.base, incid.base)
 
 # 20% coverage
-load("papers/prepguidelines/data/sim.n2246.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2246.lim.rda")
 sim$param$prep.coverage
 epi_stats(sim, ir.base, incid.base)
 
 # 30% coverage
-load("papers/prepguidelines/data/sim.n2247.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2247.lim.rda")
 sim$param$prep.coverage
 epi_stats(sim, ir.base, incid.base)
 
@@ -107,27 +107,27 @@ epi_stats(sim, ir.base, incid.base)
 # base data
 
 # 50% coverage
-load("papers/prepguidelines/data/sim.n2249.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2249.lim.rda")
 sim$param$prep.coverage
 epi_stats(sim, ir.base, incid.base)
 
 # 60% coverage
-load("papers/prepguidelines/data/sim.n2250.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2250.lim.rda")
 sim$param$prep.coverage
 epi_stats(sim, ir.base, incid.base)
 
 # 70% coverage
-load("papers/prepguidelines/data/sim.n2251.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2251.lim.rda")
 sim$param$prep.coverage
 epi_stats(sim, ir.base, incid.base)
 
 # 80% coverage
-load("papers/prepguidelines/data/sim.n2252.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2252.lim.rda")
 sim$param$prep.coverage
 epi_stats(sim, ir.base, incid.base)
 
 # 90% coverage
-load("papers/prepguidelines/data/sim.n2253.lim.rda")
+load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2253.lim.rda")
 sim$param$prep.coverage
 epi_stats(sim, ir.base, incid.base)
 

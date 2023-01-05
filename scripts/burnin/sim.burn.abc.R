@@ -5,7 +5,6 @@ suppressMessages(library("EpiModelHIV"))
 library("EasyABC")
 
 ## Parameters
-
 get_params <- function(x) {
   set.seed(x[1])
   require("EpiModelHIV")
@@ -19,14 +18,14 @@ get_params <- function(x) {
   load("est/fit.10k.rda")
   sim <- netsim(est, param, init, control)
   df <- tail(as.data.frame(sim), 500)
-  out1 <- mean(df$i.prev)
-  out2 <- unname(coef(lm(df$i.prev ~ seq_along(df$time)))[2])
+  out1 <- mean(df$i.prev)                                         # prevalence outcome
+  out2 <- unname(coef(lm(df$i.prev ~ seq_along(df$time)))[2])     # slope outcome (see supplement p.22)
   out <- c(out1, out2)
   return(out)
 }
 
 priors <- list(c("unif", 1.25, 1.35), c("unif", 0.24, 0.26))
-targets <- c(0.26, 0)
+targets <- c(0.26, 0)                                             # target outcomes
 
 a <- ABC_sequential(method = "Lenormand",
                     model = get_params,

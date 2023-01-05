@@ -10,7 +10,7 @@ abline(h = 0.26)
 df <- as.data.frame(sim)
 round(mean(tail(df$i.prev, 100)), 3)
 
-# Save burn-in file for FU sims
+# Save burn-in file for FU (follow-up?) sims
 sim <- merge_simfiles(1000, indir = "data/", ftype = "max")
 sim <- get_sims(sim, sims = "mean", var = "i.prev")
 tail(as.data.frame(sim)$i.prev)

@@ -19,7 +19,7 @@ reall <- as.numeric(args[6])
 fsimno <- paste(simno, jobno, sep = ".")
 load("est/nwstats.10k.rda")
 
-param <- param_msm(nwstats = st, ai.scale = 1.3231148,
+param <- param_msm(nwstats = st, ai.scale = 1.3231148,             # having ai parameter suggests this is a post-ABC script
                     riskh.start = 2450, prep.start = 2601,
                     prep.elig.model = model,
                     prep.coverage = covr,

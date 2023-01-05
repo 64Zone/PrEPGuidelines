@@ -12,7 +12,7 @@ df.pia <- data.frame(rep(NA, 256))
 df.nnt <- data.frame(rep(NA, 256))
 
 for (i in seq_along(steps)) {
-  load("papers/prepguidelines/data/sim.n2000.lim.rda")
+  load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2000.lim.rda")
   sim.base <- truncate_sim(sim, at = 2600)
 
   mn.base <- head(as.data.frame(sim.base), steps[i])
@@ -20,7 +20,7 @@ for (i in seq_along(steps)) {
   incid.base <- sum(mn.base$incid)
 
 
-  load("papers/prepguidelines/data/sim.n2108.lim.rda")
+  load("C:/Users/sliu/Box/Zone/3_HIV_spread/EpiModel/7_RepeatJenness16/prepguidelines/data/sim.n2108.lim.rda")
   sim <- truncate_sim(sim, at = 2600)
   mn <- head(as.data.frame(sim), steps[i])
 
@@ -42,7 +42,7 @@ names(df.nia) <- names(df.pia) <- names(df.nnt) <- 1:520
 # boxplot(df.pia, outline = FALSE)
 # boxplot(df.nnt, outline = FALSE)
 
-library(wesanderson)
+library(wesanderson)                    # visual effect
 pal <- wes_palette("Zissou")[5]
 
 pia.mean <- tail(unname(apply(df.pia, 2, mean)), 500)
